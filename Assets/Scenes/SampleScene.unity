@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 493477907}
   - component: {fileID: 493477909}
   - component: {fileID: 493477908}
+  - component: {fileID: 493477910}
   m_Layer: 0
   m_Name: Venicle
   m_TagString: Untagged
@@ -354,6 +355,23 @@ WheelJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
+--- !u!114 &493477910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493477905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecfff91db59ae646b76c602381c09a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frontTireRB: {fileID: 1765777165}
+  _backTireRB: {fileID: 459306160}
+  _carRB: {fileID: 493477907}
+  _speed: 150
+  _rotationSpeed: 300
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230728447}
   - component: {fileID: 1230728448}
+  - component: {fileID: 1230728449}
   m_Layer: 0
   m_Name: Driver-Body
   m_TagString: Untagged
@@ -633,6 +652,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1230728449
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230728446}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.007273674, y: 0.072734654}
+  m_Size: {x: 0.2180748, y: 0.2811104}
+  m_Direction: 0
 --- !u!1 &1765777161
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +801,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1917382035}
   - component: {fileID: 1917382036}
+  - component: {fileID: 1917382039}
+  - component: {fileID: 1917382037}
+  - component: {fileID: 1917382038}
   m_Layer: 0
   m_Name: Driver-Head
   m_TagString: Untagged
@@ -840,6 +878,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1917382037
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917382034}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.007273197, y: 0.07758367}
+  serializedVersion: 2
+  m_Radius: 0.2157464
+--- !u!233 &1917382038
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917382034}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 493477907}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: -0.2}
+  m_ConnectedAnchor: {x: -10.17, y: 0.96}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 1
+  m_AngleLimits:
+    m_LowerAngle: -30
+    m_UpperAngle: 30
+--- !u!50 &1917382039
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917382034}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.5
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: -0.01
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2130818460
 GameObject:
   m_ObjectHideFlags: 0
