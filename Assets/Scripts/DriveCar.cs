@@ -53,7 +53,8 @@ public class DriveCar : MonoBehaviour
         float moveInput = _currentDirection;
         _frontTireRB.AddTorque(-moveInput * _speed * Time.deltaTime);
         _backTireRB.AddTorque(-moveInput * _speed * Time.deltaTime);
-        _carRB.AddTorque(-moveInput * _rotationSpeed * Time.deltaTime);
+         float rotationInput = Input.GetAxis("Horizontal");
+        _carRB.angularVelocity = -rotationInput * _rotationSpeed * Mathf.Deg2Rad;
     }
 
     public bool GetGasPedalState()
